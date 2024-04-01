@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>OOJS: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+    </section>
+
+  </body>
+  <script>
+    // Definición de la clase Shape
+    class Shape {
+      // Propiedades de la clase Shape
+      name;
+      sides;
+      sideLength;
+
+      // Constructor de la clase Shape
+      constructor(name, sides, sideLength) {
+        this.name = name;
+        this.sides = sides;
+        this.sideLength = sideLength;
+      }
+
+      // Método para calcular el perímetro de la forma
+      calcPerimeter() {
+        const perimeter = this.sides * this.sideLength;
+        console.log(`Perimeter of ${this.name}: ${perimeter}`);
+      }
+    }
+
+    // Definición de la clase Square que hereda de Shape
+    class Square extends Shape {
+      // Constructor de la clase Square
+      constructor(sideLength) {
+        // Llama al constructor de la clase padre (Shape) con valores predeterminados
+        super("square", 4, sideLength);
+      }
+
+      // Método para calcular el área del cuadrado
+      calcArea() {
+        const area = this.sideLength ** 2;
+        console.log(`Area of square: ${area}`);
+      }
+    }
+
+    // Crear una instancia de la clase Square llamada square
+    const square = new Square(5);
+    // Llama a los métodos calcPerimeter() y calcArea() en la instancia square
+    square.calcPerimeter();
+    square.calcArea();
+  </script>
+</html>
